@@ -29,7 +29,11 @@ class MyDocument extends Document {
                     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
                     rel="stylesheet"
                 ></link>
-                <body>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+                    rel="stylesheet"
+                ></link>
+                <body className="bg-[#1A1A1A]">
                     <Main />
                     <NextScript />
                 </body>

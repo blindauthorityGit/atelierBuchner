@@ -21,3 +21,18 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.radialGradient {
+  background: rgb(26, 26, 26);
+  background: radial-gradient(circle, rgba(51, 44, 37, 1)  0%, rgba(51, 44, 37, 1) 22%, rgba(26, 26, 26, 1) 60%);
+
+}
+
+.blackToTransparent {
+  background: rgb(26,26,26);
+background: -moz-linear-gradient(0deg, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 45%);
+background: -webkit-linear-gradient(0deg, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 45%);
+background: linear-gradient(0deg, rgba(26,26,26,1) 0%, rgba(26,26,26,0) 45%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1a1a",endColorstr="#1a1a1a",GradientType=1);
+
+}
