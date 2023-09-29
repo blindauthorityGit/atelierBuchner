@@ -34,18 +34,27 @@ const KursCard = (props) => {
         textControls.start({ y: 0, opacity: 0 });
         overlayControls.start({ opacity: 0 });
     };
+    useEffect(() => {
+        cardControls.start({
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 0.5, type: "spring", damping: 15, stiffness: 100 },
+        }); // Start the scale animation when the component is mounted
+    }, [cardControls]);
 
     return (
         <motion.div
             ref={cardRef}
             className={`w-full h-64 relative col-span-3 lg:col-span-${12 / props.dataFull.length}`}
             style={{
-                height: cardHeight * 1.5 + "px",
+                height: cardHeight * 1.35 + "px",
             }}
             // Use onHoverStart and onHoverEnd event handlers
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
             animate={cardControls} // Apply animation controls to the card
+            initial={{ opacity: 0, scale: 0.25 }} // Set the initial scale to 0
+            transition={{ duration: 0.5 }}
         >
             <div className="date absolute bg-blackText-950 z-10 top-4 right-8 text-primaryColor-100 font-semibold font-sans px-8 py-2">
                 {props.data.datum}

@@ -7,9 +7,9 @@ import { useRouter } from "next/router";
 import { MainButton } from "../buttons";
 
 // Overlay
-import Overlay from "../modal/overlay";
+import Overlay from "../overlay";
 // Modal
-import Modal from "../modal/modal";
+import Modal from "../modal/modal1";
 
 import { Newsletter } from "../menues";
 
@@ -156,7 +156,7 @@ const Menu1 = (props) => {
                 className="h-16 fixed top-0 left-0 right-0 origin-[0%] bg-white z-40"
                 style={{ scaleX: scrollYProgress }}
             /> */}
-            <nav ref={navRef} className={`w-full fixed z-30 px-4 sm:px-12 lg:py-2  ${props.colspan}`}>
+            <nav ref={navRef} className={`w-full fixed z-30 px-4 sm:px-12 lg:py-2 top-0   ${props.colspan}`}>
                 {/* BG */}
                 <div className=" z-40 grid relative container mx-auto grid-cols-12 m-auto items-center  py-2 sm:py-4  lg:px-0 lg:py-0">
                     {/* Background Image */}
@@ -234,7 +234,9 @@ const Menu1 = (props) => {
                             {props.burgerIcon}
                         </div>
                         <div className="hidden lg:flex mt-0 pt-0 items-center col-span-2">
-                            <MainButton link="#">SHOP</MainButton>
+                            <MainButton klasse="bg-themeAccent" link="#">
+                                SHOP
+                            </MainButton>
                         </div>
                         <div className="hidden lg:hidden ">
                             {props.socialMedia.map((e, i) => {

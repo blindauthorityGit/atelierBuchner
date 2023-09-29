@@ -14,7 +14,7 @@ const H2 = ({ children, klasse }) => {
 };
 
 const H3 = ({ children, klasse }) => {
-    return <h2 className={`text-lg lg:text-2xl font-bold ${klasse}`}>{children}</h2>;
+    return <h2 className={`text-lg lg:text-4xl font-thin font-headline ${klasse}`}>{children}</h2>;
 };
 const H4 = ({ children, klasse }) => {
     return <h4 className={`text-lg lg:text-lg font-regular font-sans ${klasse}`}>{children}</h4>;

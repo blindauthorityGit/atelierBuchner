@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 // FUNCTIONS
 import calculateAspectRatio from "../../functions/calculateAspectRatio";
 import urlFor from "../../functions/urlFor";
 const MasonryElement = (props) => {
+    const router = useRouter();
+
+    // Define page transition animations
+    const pageVariants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+    };
+
+    const handleButtonClick = () => {
+        // Use router.push to navigate to a different route
+        router.push(`/galerie/${props.data.slug.current}`);
+    };
+
+    useEffect(() => {
+        console.log(props.data.slug.current);
+    }, []);
+
     return (
-        <motion.a
+        <motion.div
             layoutId={"LayoutIMG"}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            href={`/galerie/${props.data.slug.current}`}
+            key={props.data.slug.current} // Use the pathname as a key for smooth transitions
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+            onClick={handleButtonClick}
             className={`${props.klasse} relative cursor-pointer group overflow-hidden transition-all duration-300`}
             whileTap={{ scale: 0.95 }}
             onMouseOver={(e) => {
@@ -52,8 +73,9 @@ const MasonryElement = (props) => {
                 onAnimationEnd={(e) => {
                     e.target.classList.remove("scale-in-center");
                 }}
+                loading="lazy"
             />
-        </motion.a>
+        </motion.div>
     );
 };
 

@@ -13,7 +13,6 @@ import Hero from "../components/Hero/hero";
 import { FullHeightHero } from "../components/Hero";
 import { MasonryGrid } from "../components/imageGrid";
 import { RadialGradient } from "../components/layout/bg";
-import { FloaterInfo } from "../components/floaters";
 import Section from "../components/layout/section";
 import { CenterText, BigCenterText } from "../components/textElements";
 import { KursCard } from "../components/cards";
@@ -35,11 +34,7 @@ export default function Home({ dataBilder, dataAkademie, dataChristine, dataBlog
             </Head>
             <Hero fullHeight={true} colspan="col-span-12"></Hero>
             <h1 className="font-headline text-themeGreen">Hallo ich bin ein Text</h1>
-            <FloaterInfo
-                onClick={(e) => {
-                    console.log(e.currentTarget);
-                }}
-            />
+
             <FullHeightHero>
                 <MasonryGrid images={dataBilder}></MasonryGrid>
             </FullHeightHero>
@@ -55,7 +50,7 @@ export default function Home({ dataBilder, dataAkademie, dataChristine, dataBlog
                     return <KursCard dataFull={dataAkademie} data={e} />;
                 })}
                 <div className="col-span-12 flex justify-center">
-                    <GhostButton centered link="#">
+                    <GhostButton centered link="./kurse">
                         Mehr
                     </GhostButton>
                 </div>

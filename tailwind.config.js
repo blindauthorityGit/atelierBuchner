@@ -43,6 +43,7 @@ module.exports = {
                 },
                 themeGreen: "#3A7D44",
                 themeRed: "#DF2935",
+                themeAccent: "#BA5624",
             },
             lineHeight: {
                 xl: "2", // Customize the line height for text-xl
