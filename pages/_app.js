@@ -9,6 +9,9 @@ import { FloaterInfo } from "../components/floaters";
 import Overlay from "../components/overlay";
 import { Modal } from "../components/modal";
 
+//PARALLAX
+import { ParallaxProvider } from "react-scroll-parallax";
+
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
@@ -72,7 +75,9 @@ function MyApp({ Component, pageProps }) {
             ></Menu1>
             <LayoutGroup>
                 <div key={router.pathname}>
-                    <Component {...pageProps} />
+                    <ParallaxProvider>
+                        <Component {...pageProps} />
+                    </ParallaxProvider>
                 </div>
             </LayoutGroup>
         </>

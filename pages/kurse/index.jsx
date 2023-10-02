@@ -8,6 +8,9 @@ import client from "../../client";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//PARALLAX
+import { Parallax } from "react-scroll-parallax";
+
 // COMPONENTS
 import Section from "../../components/layout/section";
 import { CenterText, BigCenterText } from "../../components/textElements";
@@ -40,9 +43,11 @@ export default function Kurse({ dataBilder, dataAkademie, dataChristine, dataBlo
             </Head>
             <Section klasse="text-center">
                 <CenterText klasse="mb-4" topLine="Unser Spektrum an" headline="KURSPROGRAMM"></CenterText>
-                {dataAkademie.map((e, i) => {
-                    return <KursCard dataFull={dataAkademie} data={e} />;
-                })}
+                <Parallax className=" h-full grid col-span-12 grid-cols-12 gap-2" translateY={["-80px", "60px"]}>
+                    {dataAkademie.map((e, i) => {
+                        return <KursCard dataFull={dataAkademie} data={e} />;
+                    })}
+                </Parallax>
 
                 <BigCenterText
                     klasse="mt-10"
